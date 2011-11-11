@@ -1,5 +1,6 @@
+.bundle
+db/*.sqlite3
 log/*.log
-tmp/**/*
-*.tmproj
+tmp/
+.sass-cache/
 config/shopify.yml
-db/backup/*

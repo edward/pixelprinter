@@ -1,26 +1,15 @@
+<h1>Install</h1>
 
-<div id="login">
-  <div id="login-wrapper" >
-    <h1><%= APP_NAME %></h1>
-    <p class="description">
-      Invoices, Package Slips and other customizable templates for<br/>
-      your orders in <%= link_to "Shopify", "http://www.shopify.com" %>.
-    </p>
-    <% form_tag '/login/authenticate' do %>
-    <div class="sidebar-block" >   
-      <p><em>Enter your shop's address</em></p>
-      <p class="textfield"><label for="shop"><strong>http:// </strong></label><%= text_field_tag 'shop', nil, :size => 14 %></p>
-      <p class="description">
-        <span><em>Example:</em> teslamotors.myshopify.com
-      </p>
-      <p class="low-em"><input type="image" value="login" name="login" src="images/button-login.png"></p>  
-    </div>      
-    <% end %>
-  </div>
-   <div> </div>
-  <img src="../images/logo.png"  alt="Logo" class="logo"   />
-  
-</div>     
-<% content_for :javascript do %>
-$(":text:visible:enabled:first").focus();
-<% end %>              
+<p>Install this app in a shop to get access to its private admin data.</p>
+
+<p style="padding-bottom: 1em"><span class="hint">Don&rsquo;t have a shop to install your app in handy? <a href="https://app.shopify.com/services/partners/api_clients/test_shops">Create a test shop.</a></span></p>
+
+<%= form_tag '/login/authenticate' do %>
+  <label for='shop'><strong>The URL of the Shop</strong>
+    <span class="hint">(or just the subdomain if it&rsquo;s at myshopify.com)</span>
+  </label>
+  <p>
+    <%= text_field_tag 'shop', nil, {:size => 45} %>
+    <%= submit_tag 'Install' %>
+  </p>
+<% end %>
