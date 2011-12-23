@@ -14,7 +14,6 @@ class PrintTemplate < ActiveRecord::Base
 
   MAX_TEMPLATES_PER_SHOP   = 10
   TOO_MUCH_TEMPLATES_ERROR = "Maximum number of templates is #{MAX_TEMPLATES_PER_SHOP}! You need to delete another template before you are able to create a new one."
-  
     
   def self.create_from_file(template_name)
     content = File.read("#{RAILS_ROOT}/db/printing/#{template_name}.liquid")
@@ -63,7 +62,6 @@ class PrintTemplate < ActiveRecord::Base
       raise ActiveRecord::RecordNotFound, "Could not find version #{version}"
     end
   end
-
   
   protected 
   
@@ -75,7 +73,6 @@ class PrintTemplate < ActiveRecord::Base
       errors.add_to_base(message) unless success
     end
   end
-
   
   private  
 

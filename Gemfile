@@ -1,3 +1,4 @@
+source 'http://gems.github.com'
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
@@ -33,3 +34,9 @@ gem 'jquery-rails'
 
 gem 'shopify_app'
 gem 'airbrake'
+gem 'liquid'
+
+group :test do
+  gem 'mocha'
+  gem "jeremymcanally-context", :require => 'context'
+end

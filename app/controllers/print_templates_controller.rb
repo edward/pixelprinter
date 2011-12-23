@@ -16,7 +16,6 @@ class PrintTemplatesController < ApplicationController
     @tmpl  = shop.templates.find(params[:id])
     @order = ShopifyAPI::Order.find(params[:order_id])
   end
-
   
   def new
     @tmpl = shop.templates.new
@@ -40,7 +39,6 @@ class PrintTemplatesController < ApplicationController
     end
   end
 
-
   def edit
     @tmpls = shop.templates
     @tmpl = @tmpls.find(params[:id])
@@ -59,8 +57,7 @@ class PrintTemplatesController < ApplicationController
       end
     end
   end 
-
-
+  
   def destroy
     @tmpl = shop.templates.find(params[:id])
     @tmpl.destroy

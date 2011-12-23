@@ -1,13 +1,11 @@
 module MoneyHelper
-  
   def money(money, convert_from_cents = false)
     MoneyHelper.format(shop.money_format, money, shop.currency, convert_from_cents)
-  end    
+  end
 
   def money_with_currency(money, convert_from_cents = false)
     MoneyHelper.format(shop.money_with_currency_format, money, shop.currency, convert_from_cents)
   end
-  
   
   def self.format(args, amount, currency = nil, convert_from_cents = false)
     cents = amount.is_a?(String) ? amount.to_f : amount
@@ -28,8 +26,6 @@ module MoneyHelper
       end
     end    
   end
-
-
   
   private
 

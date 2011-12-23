@@ -1,5 +1,4 @@
-module ShopifyLoginProtection
-
+module ShopifyApp::LoginProtection
   def shopify_session
     if session[:shopify].blank? or shop_overwritten?
       original_request = "#{request.path}?#{request.query_string}"
@@ -16,12 +15,11 @@ module ShopifyLoginProtection
     ShopifyAPI::Shop.cached = nil
   end
   
-  
   private
   
   def shop_overwritten?
     return false if params[:shop].blank?
 
-    params[:shop] != session[:shopify].url && "#{params[:shop]}.myshopify.com" != session[:shopify].url
+    (params[:shop] != session[:shopify].url) && ("#{params[:shop]}.myshopify.com" != session[:shopify].url)
   end
 end

@@ -1,4 +1,6 @@
 Pixelprinter::Application.routes.draw do
+  resources :print_templates
+
   match 'welcome'            => 'home#welcome'
 
   match 'design'             => 'home#design'

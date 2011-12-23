@@ -1,0 +1,6 @@
+require "json_filter"
+require "money_filter"
+require "shop_filter"
+require "string_processing_filter"
+require "tag_filter"
+require "weight_filter"

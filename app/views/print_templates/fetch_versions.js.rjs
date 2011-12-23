@@ -1,2 +1,0 @@
-page.replace_html 'rollback-selectbox', version_options_for_select(@tmpl.version_numbers)
-page.show 'rollback-selectbox'

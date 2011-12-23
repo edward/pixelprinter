@@ -5,13 +5,13 @@ class String
                                                                                                                            
     result.downcase!
     
-    # remove apostrophe and bracets
+    # remove apostrophes, parentheses, and brackets
     result.gsub!(/[\'\"\(\)\[\]]/, '')
 
-    # strip all non word chars
+    # strip all non-word chars
     result.gsub!(/\W/, ' ')
 
-    # replace all white space sections with a dash
+    # replace all whitespace sections with a dash
     result.gsub!(/\ +/, '-')
 
     # trim dashes
@@ -20,5 +20,4 @@ class String
     
     result
   end
-  
 end
